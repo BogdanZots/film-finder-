@@ -21,7 +21,6 @@ function searchFilm() {
                     }
                     inner += `
                  <div class="col-md-6 col-lg-4 col-xl-2 item" data-name="films">
-                 <div class="heartContainer hidden">${heart}</div>
                  <img class="poster-img" src="${imgUlr || noPosterData}">
                  <div>${films.title || films.original_name}</div>
                  </div>
