@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workshop Kinopoisk</title>
+    <link href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body something="non-standard">
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+        .hidden{
+            display: none;
+        }
+        a {
+            cursor: pointer;
+            font-size: 12px;
+        }
+        p {
+            margin: 0;
+        }
+        img {
+			max-width: 100%;
+		}
+
+        .description {
+            margin-bottom: 30px;
+        }
+        .overview {
+            display: block;
+            margin-top: 20px;
+        }
+        .film-name{
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        .title {
+            margin-bottom: 50px;
+        }
+        .film-rate,.film-about{
+            font-weight: bold;
+        }
+		.item {
+			margin: 0;
+            z-index: 999;
+			text-align: center;
+            transform: scale(1);
+            transition: .4s;
+		}
+     /*    .svg-item{
+            width: 32px;
+            height: 32px;
+        } */
+        svg{
+        width: 100px;
+        height: 100px;
+        }
+        .heart-active{
+            transition: .2s;
+            fill: #0db7ff;
+        }
+        .item:hover{
+            transform: scale(1.1);
+            transition: .4s;
+        }
+        .item-full{
+            display: flex;
+            justify-content: space-between;
+        }
+        .film-inner{
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+        .films-left{
+            min-width: 25%;
+            position: relative;
+        }
+        .film-overview{
+            margin-left:10%;
+        }
+        .heart,.heartContainer{
+            position: absolute;
+    width: 32px;
+    height: 32px;
+    right: -20px;
+    top: -3px;
+        }
+        .owiii {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #188348;
+        }
+        #search-form{
+            position: relative;
+        }
+		.spinner {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      border-top: solid 5px #000;
+      border-bottom: solid 5px #000;
+      border-left: solid 5px #fff;
+      border-right: solid 5px #fff;
+      border-radius: 50%;
+      animation: spin 500ms linear;
+      animation-iteration-count: infinite;
+
+		}
+
+		@keyframes spin {
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+        .find-img{
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            position: absolute;
+            top: .2rem;
+            right: 1rem;
+            cursor: pointer;
+            z-index: 0;
+        }
+        .poster-img{
+            max-width: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+        }
+	</style>
+    <div class="container"><a class="owiii" id="home" href="">Kinopoisk-mini by ZotsBohdan</a></div>
+    <div class="container">
+        <div class="jumbotron">
+            <h3 class="text-center">
+                Поиск фильмов
+            </h3>
+            <form id="search-form">
+                <img src="https://cdn2.iconfinder.com/data/icons/thin-line-icons-for-seo-and-development-1/64/SEO_search-256.png" alt="" class="find-img">
+                <input type="text" class="form-control" id="search-text" placeholder="Введите название...">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="movies">
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html
